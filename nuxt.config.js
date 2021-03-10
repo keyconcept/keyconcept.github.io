@@ -4,14 +4,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'www.keyconceptthailand.com',
+    title: 'Key Concept Thailand',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Key Concept Thailand',
+      },
     ],
     link: [
       {
@@ -96,22 +100,7 @@ export default {
       },
       {
         rel: 'preload',
-        href: '/preload_carousel.JPG',
-        as: 'image',
-      },
-      {
-        rel: 'preload',
-        href: '/preload_carousel.WEBP',
-        as: 'image',
-      },
-      {
-        rel: 'preload',
-        href: '/nani-logo.png',
-        as: 'image',
-      },
-      {
-        rel: 'preload',
-        href: '/nani-logo.webp',
+        href: '/kc-logo.png',
         as: 'image',
       },
     ],
@@ -151,7 +140,6 @@ export default {
   ],
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: true,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
