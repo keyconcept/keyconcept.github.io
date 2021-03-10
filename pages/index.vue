@@ -74,7 +74,7 @@ export default {
 
 <style lang="css">
 .kc-carousel {
-  margin-top: -60px;
+  margin-top: -120px;
   width: 100%;
   height: 100vh;
 }

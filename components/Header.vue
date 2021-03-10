@@ -4,7 +4,7 @@
     type="dark"
     :sticky="true"
     fixed
-    class="nn-bg-brown nn-navbar nn-text-light"
+    class="nn-bg-brown nn-navbar nn-text-light kc-navbar"
   >
     <b-navbar-brand href="/" style="padding: 0; margin: 0; height: 40px">
       <picture>
@@ -42,5 +42,8 @@ export default {
 <style lang="css" scoped>
 a {
   color: white !important;
+}
+.kc-navbar {
+  padding: 40px;
 }
 </style>
