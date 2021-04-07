@@ -14,7 +14,11 @@
             <h1>{{ project.title }}</h1>
             <p>{{ project.description }}</p>
           </div>
-          <b-button variant="outline-light" style="margin-bottom: 110px">
+          <b-button
+            variant="outline-light"
+            style="margin-bottom: 110px"
+            :href="`/projects/${project.id}`"
+          >
             SEE THIS PROJECTS
           </b-button>
         </b-carousel-slide>
@@ -27,32 +31,21 @@
 export default {
   async asyncData({ $content, params }) {
     const projects = await $content('projects').fetch()
-    console.log('PROJECTS', projects)
     return {
       projects,
     }
   },
-  data() {
-    return {
-      currentImageIndex: 0,
-    }
-  },
+
   head() {
     return {
       link: [],
     }
   },
   computed: {},
-  methods: {
-    previewImage(index) {
-      this.currentImageIndex = index
-      this.$refs['my-modal'].show()
-    },
-  },
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .kc-carousel {
   margin-top: -120px;
   width: 100%;
