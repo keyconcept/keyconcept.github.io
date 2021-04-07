@@ -11,8 +11,8 @@
         <source :srcSet="project.cover" type="image/jpeg" />
         <b-carousel-slide :img-src="project.cover">
           <div :class="`text-${project.align} project-content`">
-            <h1>{{ project.title }}</h1>
-            <p>{{ project.description }}</p>
+            <h1 style="line-height: 1">{{ project.title }}</h1>
+            <h5 style="margin-top: -10px">{{ project.description }}</h5>
           </div>
           <b-button
             variant="outline-light"
