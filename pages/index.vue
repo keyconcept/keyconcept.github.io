@@ -10,7 +10,11 @@
       <picture v-for="(img, index) in landingGalleryJPG" :key="img">
         <source :srcSet="landingGalleryWEBP[index]" type="image/webp" />
         <source :srcSet="img" type="image/jpeg" />
-        <b-carousel-slide :img-src="img"> </b-carousel-slide>
+        <b-carousel-slide :img-src="img">
+          <b-button variant="outline-light" style="margin-bottom: 110px">
+            SEE THIS PROJECTS
+          </b-button>
+        </b-carousel-slide>
       </picture>
     </b-carousel>
   </div>
@@ -89,5 +93,13 @@ export default {
 .carousel-item img {
   height: 100vh;
   object-fit: cover;
+}
+.carousel-indicators > li {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.carousel-indicators {
+  margin-bottom: 100px;
 }
 </style>
