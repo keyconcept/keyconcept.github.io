@@ -7,10 +7,13 @@
       background="#ababab"
       class="kc-carousel"
     >
-      <picture v-for="(img, index) in landingGalleryJPG" :key="img">
-        <source :srcSet="landingGalleryWEBP[index]" type="image/webp" />
-        <source :srcSet="img" type="image/jpeg" />
-        <b-carousel-slide :img-src="img">
+      <picture v-for="project in projects" :key="project.id">
+        <source :srcSet="project.cover" type="image/jpeg" />
+        <b-carousel-slide :img-src="project.cover">
+          <div :class="`text-${project.align} project-content`">
+            <h1>{{ project.title }}</h1>
+            <p>{{ project.description }}</p>
+          </div>
           <b-button variant="outline-light" style="margin-bottom: 110px">
             SEE THIS PROJECTS
           </b-button>
@@ -22,45 +25,16 @@
 
 <script>
 export default {
+  async asyncData({ $content, params }) {
+    const projects = await $content('projects').fetch()
+    console.log('PROJECTS', projects)
+    return {
+      projects,
+    }
+  },
   data() {
     return {
       currentImageIndex: 0,
-      landingGalleryJPG: [
-        require('~/assets/images/landing-3-01.jpg'),
-        require('~/assets/images/landing-3-02.jpg'),
-        require('~/assets/images/landing-3-03.jpg'),
-        require('~/assets/images/landing-3-04.jpg'),
-        require('~/assets/images/landing-3-05.jpg'),
-        require('~/assets/images/landing-3-06.jpg'),
-        require('~/assets/images/landing-3-07.jpg'),
-        require('~/assets/images/landing-3-08.jpg'),
-        require('~/assets/images/landing-3-09.jpg'),
-        require('~/assets/images/landing-3-10.jpg'),
-        require('~/assets/images/landing-3-11.jpg'),
-        require('~/assets/images/landing-3-12.jpg'),
-        require('~/assets/images/landing-3-13.jpg'),
-        require('~/assets/images/landing-3-14.jpg'),
-        require('~/assets/images/landing-3-15.jpg'),
-        require('~/assets/images/landing-3-16.jpg'),
-      ],
-      landingGalleryWEBP: [
-        require('~/assets/images/landing-3-01.jpg?webp'),
-        require('~/assets/images/landing-3-02.jpg?webp'),
-        require('~/assets/images/landing-3-03.jpg?webp'),
-        require('~/assets/images/landing-3-04.jpg?webp'),
-        require('~/assets/images/landing-3-05.jpg?webp'),
-        require('~/assets/images/landing-3-06.jpg?webp'),
-        require('~/assets/images/landing-3-07.jpg?webp'),
-        require('~/assets/images/landing-3-08.jpg?webp'),
-        require('~/assets/images/landing-3-09.jpg?webp'),
-        require('~/assets/images/landing-3-10.jpg?webp'),
-        require('~/assets/images/landing-3-11.jpg?webp'),
-        require('~/assets/images/landing-3-12.jpg?webp'),
-        require('~/assets/images/landing-3-13.jpg?webp'),
-        require('~/assets/images/landing-3-14.jpg?webp'),
-        require('~/assets/images/landing-3-15.jpg?webp'),
-        require('~/assets/images/landing-3-16.jpg?webp'),
-      ],
     }
   },
   head() {
@@ -101,5 +75,8 @@ export default {
 }
 .carousel-indicators {
   margin-bottom: 100px;
+}
+.project-content {
+  margin: 0px -30px;
 }
 </style>
