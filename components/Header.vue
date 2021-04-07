@@ -44,6 +44,7 @@ a {
   color: white !important;
 }
 .kc-navbar {
-  padding: 40px;
+  padding: 20px 60px;
+  border-bottom: 2px white solid;
 }
 </style>
