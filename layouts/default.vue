@@ -10,4 +10,8 @@ export default {
   components: { Header },
 }
 </script>
-<style></style>
+<style>
+body {
+  background-color: black;
+}
+</style>

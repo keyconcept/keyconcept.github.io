@@ -18,7 +18,7 @@
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav right>
           <b-nav-item href="/">Home</b-nav-item>
-          <b-nav-item href="/contact">Contact us</b-nav-item>
+
           <b-nav-item
             href="https://www.facebook.com/Keyconcept-511244502730746"
             target="_blank"

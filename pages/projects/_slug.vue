@@ -81,7 +81,7 @@ export default {
 
 <style lang="scss">
 .kc-carousel {
-  margin-top: -120px;
+  margin-top: -155px;
   width: 100%;
   height: 100vh;
 }
