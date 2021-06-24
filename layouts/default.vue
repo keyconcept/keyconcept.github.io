@@ -1,7 +1,9 @@
 <template>
   <div>
-    <Header></Header>
-    <Nuxt />
+    <client-only>
+      <Header></Header>
+      <Nuxt />
+    </client-only>
   </div>
 </template>
 <script>

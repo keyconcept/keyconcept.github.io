@@ -1,4 +1,4 @@
-import Vue from 'vue';
-import { BootstrapVueIcons } from 'bootstrap-vue';
+import Vue from 'vue'
+import { BIconFacebook } from 'bootstrap-vue'
 
-Vue.use(BootstrapVueIcons);
+Vue.component('BIconFacebook', BIconFacebook)
