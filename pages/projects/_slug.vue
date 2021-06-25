@@ -5,8 +5,37 @@
         <source :srcSet="project.cover" type="image/jpeg" />
         <b-carousel-slide :img-src="project.cover">
           <div :class="`text-${project.align} project-content`">
-            <h1>{{ project.title }}</h1>
-            <p>{{ project.description }}</p>
+            <h1 style="line-height: 1">
+              {{ project.title }}
+              {{ project.project_year ? `(${project.project_year})` : '' }}
+            </h1>
+            <h5 style="margin-top: -10px">{{ project.description }}</h5>
+            <table class="info-table" :style="{ float: project.align }">
+              <tr>
+                <td class="table-title">Location :</td>
+                <td class="table-value">{{ project.location }}</td>
+              </tr>
+              <tr>
+                <td class="table-title">Owner :</td>
+                <td class="table-value">{{ project.owner }}</td>
+              </tr>
+              <tr>
+                <td class="table-title">Area :</td>
+                <td class="table-value">{{ project.area }}</td>
+              </tr>
+              <tr>
+                <td class="table-title">Budget :</td>
+                <td class="table-value">{{ project.budget }}</td>
+              </tr>
+              <tr>
+                <td class="table-title">Designed by :</td>
+                <td class="table-value">{{ project.designed_by }}</td>
+              </tr>
+              <tr>
+                <td class="table-title">Style :</td>
+                <td class="table-value">{{ project.style }}</td>
+              </tr>
+            </table>
           </div>
         </b-carousel-slide>
       </picture>
@@ -80,6 +109,15 @@ export default {
 </script>
 
 <style lang="scss">
+.info-table {
+  line-height: 18px;
+  font-size: 18px;
+  .table-title {
+    text-align: right;
+    text-transform: uppercase;
+    padding-right: 10px;
+  }
+}
 .kc-carousel {
   margin-top: -155px;
   width: 100%;
